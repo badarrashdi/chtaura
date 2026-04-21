@@ -29,25 +29,29 @@ export const BrandsShowcase = () => (
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border border border-border">
         {featured.map((brand, i) => (
-          <motion.article
-            key={brand.name}
+          <motion.div
+            key={brand.slug}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: i * 0.05 }}
-            className="group relative bg-background hover:bg-surface-elevated transition-colors p-8 md:p-10 aspect-square flex flex-col justify-between cursor-pointer"
           >
-            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              {brand.origin}
-            </div>
-            <div>
-              <h3 className="font-display text-2xl md:text-3xl leading-tight group-hover:text-primary transition-colors">
-                {brand.name}
-              </h3>
-              <p className="mt-2 text-xs text-muted-foreground uppercase tracking-wider">{brand.category}</p>
-            </div>
-            <ArrowUpRight className="absolute top-6 right-6 h-4 w-4 text-muted-foreground opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all" />
-          </motion.article>
+            <Link
+              to={`/brands/${brand.slug}`}
+              className="group relative bg-background hover:bg-surface-elevated transition-colors p-8 md:p-10 aspect-square flex flex-col justify-between cursor-pointer h-full"
+            >
+              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                {brand.origin}
+              </div>
+              <div>
+                <h3 className="font-display text-2xl md:text-3xl leading-tight group-hover:text-primary transition-colors">
+                  {brand.name}
+                </h3>
+                <p className="mt-2 text-xs text-muted-foreground uppercase tracking-wider">{brand.category}</p>
+              </div>
+              <ArrowUpRight className="absolute top-6 right-6 h-4 w-4 text-muted-foreground opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all" />
+            </Link>
+          </motion.div>
         ))}
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { PageHero } from "@/components/PageHero";
 import { brands } from "@/data/brands";
 import { ArrowUpRight, Search } from "lucide-react";
@@ -60,21 +61,25 @@ const Brands = () => {
           ) : (
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-px bg-border border border-border">
               {filtered.map((b, i) => (
-                <motion.article
-                  key={b.name}
+                <motion.div
+                  key={b.slug}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: Math.min(i * 0.02, 0.4) }}
-                  className="group bg-background hover:bg-surface-elevated transition-colors p-8 flex flex-col justify-between aspect-square cursor-pointer relative"
                 >
-                  <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{b.origin}</div>
-                  <div>
-                    <h3 className="font-display text-2xl md:text-3xl leading-tight group-hover:text-primary transition-colors">{b.name}</h3>
-                    <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{b.category}</p>
-                    <p className="mt-3 text-sm text-muted-foreground line-clamp-2">{b.description}</p>
-                  </div>
-                  <ArrowUpRight className="absolute top-6 right-6 h-4 w-4 opacity-0 group-hover:opacity-100 text-primary transition-opacity" />
-                </motion.article>
+                  <Link
+                    to={`/brands/${b.slug}`}
+                    className="group bg-background hover:bg-surface-elevated transition-colors p-8 flex flex-col justify-between aspect-square cursor-pointer relative h-full"
+                  >
+                    <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{b.origin}</div>
+                    <div>
+                      <h3 className="font-display text-2xl md:text-3xl leading-tight group-hover:text-primary transition-colors">{b.name}</h3>
+                      <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{b.category}</p>
+                      <p className="mt-3 text-sm text-muted-foreground line-clamp-2">{b.description}</p>
+                    </div>
+                    <ArrowUpRight className="absolute top-6 right-6 h-4 w-4 opacity-0 group-hover:opacity-100 text-primary transition-opacity" />
+                  </Link>
+                </motion.div>
               ))}
             </div>
           )}
