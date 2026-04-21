@@ -1,16 +1,23 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Hero } from "@/components/sections/Hero";
+import { Story } from "@/components/sections/Story";
+import { BrandsMarquee } from "@/components/sections/BrandsMarquee";
+import { BrandsShowcase } from "@/components/sections/BrandsShowcase";
+import { Distribution } from "@/components/sections/Distribution";
+import { RetailExperience } from "@/components/sections/RetailExperience";
+import { Clients } from "@/components/sections/Clients";
+import { PartnerCTA } from "@/components/sections/PartnerCTA";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
-  return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
-    </div>
-  );
-};
-
-const Index = PlaceholderIndex;
+const Index = () => (
+  <>
+    <Hero />
+    <Story />
+    <BrandsMarquee />
+    <BrandsShowcase />
+    <Distribution />
+    <RetailExperience />
+    <Clients />
+    <PartnerCTA />
+  </>
+);
 
 export default Index;
