@@ -7,7 +7,9 @@ const nextConfig = {
   },
   transpilePackages: ['lucide-react'],
   images: {
-    domains: [],
+    remotePatterns: [
+      { protocol: "https", hostname: "images.unsplash.com" },
+    ],
   },
   webpack: (config) => {
     config.resolve.alias = {

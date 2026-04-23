@@ -47,7 +47,7 @@ export const Footer = () => (
           <ul className="space-y-4 font-body text-sm">
             <li className="flex gap-3"><Phone className="h-5 w-5 text-primary shrink-0" /><a href="tel:+97317535075" className="text-background/85 hover:text-primary">+973 1753 5075</a></li>
             <li className="flex gap-3"><Mail className="h-5 w-5 text-primary shrink-0" /><a href="mailto:info@chtaura.co" className="text-background/85 hover:text-primary">info@chtaura.co</a></li>
-            <li className="flex gap-3"><MapPin className="h-5 w-5 text-primary shrink-0" /><span className="text-background/85">Salmabad Industrial Area, Kingdom of Bahrain</span></li>
+            <li className="flex gap-3"><MapPin className="h-5 w-5 text-primary shrink-0" /><span className="text-background/85">Moda Mall, World Trade Center Building 20, Road 383, Block 316, Manama Center, Kingdom Of Bahrain</span></li>
           </ul>
         </div>
       </div>

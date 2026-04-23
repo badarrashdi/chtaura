@@ -8,14 +8,24 @@ import Link from "next/link";
 const slides = [
   {
     image: "/assets/hero/chtaura-food-kitchen.jpg",
-    alt: "Ancient olive grove at golden hour",
-    caption: "The grove",
+    alt: "Chtaura warehouse — wide aisle with fully stocked shelving",
+    caption: "The warehouse",
+  },
+   {
+    image: "/assets/hero/store111.jpg",
+    alt: "Chtaura warehouse — pallets of premium beverages",
+    caption: "The stock",
   },
   {
-    image: "/assets/hero/chtaura-food-kitchen5.jpg",
-    alt: "Artisan hands kneading fresh pasta dough",
-    caption: "The craft",
-  }
+    image: "/assets/hero/warehouse-beverages.jpg",
+    alt: "Chtaura warehouse — pallets of premium beverages",
+    caption: "The stock",
+  },
+  {
+    image: "/assets/hero/warehouse-forklift.jpg",
+    alt: "Chtaur a warehouse — operations floor",
+    caption: "The operation",
+  },
 ];
 
 const ROTATE_MS = 5500;

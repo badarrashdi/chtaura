@@ -16,7 +16,12 @@ export default function BrandsPage() {
   const origins = useMemo(() => ["All", ...Array.from(new Set(brands.map((b) => b.origin)))].sort(), []);
 
   const filtered = brands.filter((b) => {
-    const matchesQ = b.name.toLowerCase().includes(query.toLowerCase()) || b.category.toLowerCase().includes(query.toLowerCase());
+    const q = query.toLowerCase();
+    const matchesQ =
+      b.name.toLowerCase().includes(q) ||
+      b.category.toLowerCase().includes(q) ||
+      b.origin.toLowerCase().includes(q) ||
+      b.description.toLowerCase().includes(q);
     const matchesO = origin === "All" || b.origin === origin;
     return matchesQ && matchesO;
   });
@@ -25,8 +30,8 @@ export default function BrandsPage() {
     <>
       <PageHero
         eyebrow="Brands We Represent"
-        title={<>{brands.length} houses, <em>one curated table</em>.</>}
-        description="A portfolio shaped by 30 years of relationships with the producers we believe in. Search, filter, and discover the brands that fill Bahrain's best pantries."
+        title={<>Our <em>Brands</em></>}
+        description="Food is a celebration of culture. At Chtaura, we bring the world closer to Bahrain by introducing the finest international brands and authentic flavours to our market."
       />
 
       <section className="sticky top-20 z-30 bg-background/85 backdrop-blur-xl border-b border-border">
@@ -76,6 +81,14 @@ export default function BrandsPage() {
                   >
                     <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{b.origin}</div>
                     <div>
+                      <div className="mb-4 aspect-[16/9] rounded-xl border border-border bg-background flex items-center justify-center p-4 overflow-hidden">
+                        <img
+                          src={b.image}
+                          alt={b.name}
+                          className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
+                          loading="lazy"
+                        />
+                      </div>
                       <h3 className="font-display text-2xl md:text-3xl leading-tight group-hover:text-primary transition-colors">{b.name}</h3>
                       <p className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{b.category}</p>
                       <p className="mt-3 text-sm text-muted-foreground line-clamp-2">{b.description}</p>

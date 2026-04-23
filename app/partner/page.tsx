@@ -7,10 +7,10 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 const reasons = [
-  { n: "01", title: "Market expertise", body: "30 years of decoding Bahrain's retail, hospitality and food-service landscape." },
-  { n: "02", title: "Curated portfolio", body: "Your brand keeps company with houses like Mutti, Giuseppe Giusti and Pasta Rummo." },
-  { n: "03", title: "Full-service partner", body: "From customs to merchandising to in-store activation — we handle every detail." },
-  { n: "04", title: "Long-term thinking", body: "We don't list brands, we build them. Many of our partnerships span decades." },
+  { n: "01", title: "Strong Partnerships", body: "Built on trust and results" },
+  { n: "02", title: "Market Growth", body: "Expanding your brand reach" },
+  { n: "03", title: "Quality Assured", body: "Strict quality standards" },
+  { n: "04", title: "Wide Network", body: "Retail & hospitality coverage" },
 ];
 
 export default function PartnerPage() {
@@ -30,14 +30,14 @@ export default function PartnerPage() {
     <>
       <PageHero
         eyebrow="Partner With Us"
-        title={<>Your brand, <em>at home in Bahrain</em>.</>}
-        description="If you produce exceptional food or beverages and you're looking for a serious distribution partner in the Kingdom, we should talk."
+        title="Connecting Global Food Brands to the Bahrain Market"
+        description="Chtaura Co., Bahrain partners with international food brands to successfully enter, position, and grow within the Kingdom's dynamic market. With over three decades of experience, we combine strong distribution capabilities, retail presence, and deep market insight to deliver reliable supply, effective brand placement, and sustainable growth across retail, HoReCa, and institutional channels."
       />
 
       <section className="py-24 md:py-32">
         <div className="container grid lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="font-display text-4xl md:text-5xl text-balance">Why brands choose Chtaura.</h2>
+            <h2 className="font-display text-4xl md:text-5xl text-balance">Why Partner With Us</h2>
             <div className="mt-12 space-y-10">
               {reasons.map((r, i) => (
                 <motion.div
@@ -63,8 +63,8 @@ export default function PartnerPage() {
               onSubmit={onSubmit}
               className="bg-surface-elevated border border-border p-8 md:p-10 shadow-soft"
             >
-              <h3 className="font-display text-3xl mb-2">Tell us about your brand.</h3>
-              <p className="text-muted-foreground text-sm mb-8">A short note is enough — we'll reply within 2 business days.</p>
+              <h3 className="font-display text-3xl mb-2">Get In Touch</h3>
+              <p className="text-muted-foreground text-sm mb-8">Tell us about your brand and let's discuss how we can help you grow in Bahrain.</p>
 
               <div className="grid gap-5">
                 <Field name="name" label="Your name" required />

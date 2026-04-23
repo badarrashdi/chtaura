@@ -17,8 +17,10 @@ export const BrandsShowcase = () => (
             <span className="text-xs uppercase tracking-[0.3em] text-primary font-medium">Our Brands</span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl xl:text-6xl leading-[1.05] text-balance">
-            A curated portfolio,<br />
-            <em>thoughtfully sourced</em>.
+            We proudly represent and distribute premium brands from around the world
+
+
+.
           </h2>
         </div>
         <Link
@@ -40,18 +42,26 @@ export const BrandsShowcase = () => (
           >
             <Link
               href={`/brands/${brand.slug}`}
-              className="group relative bg-background hover:bg-surface-elevated transition-colors p-8 md:p-10 aspect-square flex flex-col justify-between cursor-pointer h-full"
+              className="group relative bg-background hover:bg-surface-elevated transition-colors p-6 md:p-8 aspect-square flex flex-col items-center justify-center gap-4 cursor-pointer h-full overflow-hidden"
             >
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                {brand.origin}
+              {/* Brand Image — foreground, fitted */}
+              <div className="w-full flex-1 flex items-center justify-center min-h-0">
+                <img
+                  src={brand.image}
+                  alt={brand.name}
+                  className="max-w-full max-h-full object-contain"
+                />
               </div>
-              <div>
-                <h3 className="font-display text-2xl md:text-3xl leading-tight group-hover:text-primary transition-colors">
+
+              {/* Brand name + meta */}
+              <div className="w-full text-center shrink-0">
+                <h3 className="font-display text-lg md:text-xl leading-tight group-hover:text-primary transition-colors">
                   {brand.name}
                 </h3>
-                <p className="mt-2 text-xs text-muted-foreground uppercase tracking-wider">{brand.category}</p>
+                <p className="mt-1 text-xs text-muted-foreground uppercase tracking-wider">{brand.origin}</p>
               </div>
-              <ArrowUpRight className="absolute top-6 right-6 h-4 w-4 text-muted-foreground opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all" />
+
+              <ArrowUpRight className="absolute top-4 right-4 h-4 w-4 text-muted-foreground opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all" />
             </Link>
           </motion.div>
         ))}
