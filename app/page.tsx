@@ -11,10 +11,8 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Story />
+       <Story />
       <BrandsShowcase />
-      <Distribution />
-      <RetailExperience />
       <Clients />
       <PartnerCTA />
     </>

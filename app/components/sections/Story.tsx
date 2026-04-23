@@ -21,16 +21,13 @@ export const Story = () => (
       >
         <div className="relative">
           <img
-            src="/assets/warehouse.jpg"
+            src="/assets/about-img.jpeg"
             alt="Chtaura warehouse — premium imported food shelves"
             loading="lazy"
             width={1600}
             height={1200}
             className="w-full h-[520px] object-cover shadow-elegant"
           />
-          <div className="absolute -bottom-6 -right-6 hidden md:block bg-primary text-primary-foreground p-6 max-w-[220px] shadow-warm">
-            <p className="font-display italic text-2xl leading-tight">"From farm to your table — uncompromised."</p>
-          </div>
         </div>
       </motion.div>
 
@@ -47,31 +44,17 @@ export const Story = () => (
         </div>
 
         <h2 className="font-display text-4xl md:text-5xl xl:text-6xl leading-[1.05] text-balance">
-          Three decades of bringing the world's pantry to{" "}
-          <em className="text-primary">Bahrain</em>.
+          Welcome to Chtaura CO. W.L.L
+
         </h2>
 
         <p className="mt-8 text-lg text-muted-foreground max-w-xl text-pretty">
-          Founded in 1994, Chtaura CO. W.L.L is one of Bahrain's leading importers,
-          distributors and wholesalers of premium food and beverages. We connect
-          carefully selected brands from the Mediterranean and beyond with the
-          retailers, hotels, restaurants and home kitchens that demand the best.
+        A leading importers, distributors and wholesales of food and beverages. Since inception in 1994 we have been supplying retailers, restaurants, hotels and businesses with food products from around the world. As food distributors we represent and connect the best food brands to Bahrain's market with an extensive list of customers and suppliers, as can be seen from our portfolio.
+
+
         </p>
 
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 border-t border-border pt-10">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 * i }}
-            >
-              <div className="font-display text-4xl md:text-5xl text-primary">{s.value}</div>
-              <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">{s.label}</div>
-            </motion.div>
-          ))}
-        </div>
+
       </motion.div>
     </div>
   </section>

@@ -6,26 +6,16 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const slides = [
-    {
+  {
     image: "/assets/hero/chtaura-food-kitchen.jpg",
     alt: "Ancient olive grove at golden hour",
     caption: "The grove",
   },
   {
-    image: "/assets/hero/chtaura-food-kitchen4.jpg",
-    alt: "Mediterranean pantry: olive oil, tomatoes, parmigiano, basil and pasta",
-    caption: "The pantry",
-  },
-  {
-    image: "/assets/hero/chtaura-food-kitchen2.jpg",
-    alt: "Rustic Mediterranean table with burrata, tomatoes, bread and olive oil",
-    caption: "The table",
-  },
-  {
     image: "/assets/hero/chtaura-food-kitchen5.jpg",
     alt: "Artisan hands kneading fresh pasta dough",
     caption: "The craft",
-  },
+  }
 ];
 
 const ROTATE_MS = 5500;
@@ -79,12 +69,6 @@ export const Hero = () => {
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl text-background"
         >
-          <div className="inline-flex items-center gap-3 mb-6">
-            <span className="h-px w-10 bg-primary" />
-            <span className="text-xs uppercase tracking-[0.3em] text-primary font-medium">
-              A Bahraini house of fine food
-            </span>
-          </div>
 
           <h1 className="font-display text-5xl md:text-6xl xl:text-7xl leading-[0.95] text-balance">
             The art of <em className="text-primary not-italic font-display">intelligent</em>{" "}
@@ -104,12 +88,6 @@ export const Hero = () => {
             >
               Explore the brands
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/partner"
-              className="inline-flex items-center gap-2 px-3 py-4 text-sm font-medium border-b border-background/70 text-background hover:border-primary hover:text-primary transition-colors"
-            >
-              Partner with us
             </Link>
           </div>
         </motion.div>
