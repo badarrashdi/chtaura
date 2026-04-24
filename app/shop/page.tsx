@@ -54,16 +54,24 @@ function imgSrc(url: string) {
 function useProducts() {
   return useQuery<Product[]>({
     queryKey: ["products"],
-    queryFn: () => fetch("/api/products").then((r) => r.json()),
-    staleTime: 5 * 60 * 1000,
+    queryFn: async () => {
+      const res = await fetch("/api/products");
+      if (!res.ok) throw new Error(`${res.status}`);
+      return res.json();
+    },
+    retry: 2,
   });
 }
 
 function useCategories() {
   return useQuery<Category[]>({
     queryKey: ["categories"],
-    queryFn: () => fetch("/api/categories").then((r) => r.json()),
-    staleTime: 5 * 60 * 1000,
+    queryFn: async () => {
+      const res = await fetch("/api/categories");
+      if (!res.ok) throw new Error(`${res.status}`);
+      return res.json();
+    },
+    retry: 2,
   });
 }
 
@@ -235,7 +243,7 @@ function ActiveTag({ label, onRemove }: { label: string; onRemove: () => void })
 }
 
 export default function ShopPage() {
-  const { data: products = [], isLoading } = useProducts();
+  const { data: products = [], isLoading, error } = useProducts();
   const { data: categories = [] } = useCategories();
 
   const [query, setQuery] = useState("");

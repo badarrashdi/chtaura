@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const res = await fetch("https://chtaura.co/api/products", {
-    next: { revalidate: 300 },
+    cache: "no-store",
   });
   const data = await res.json();
   return NextResponse.json(data);

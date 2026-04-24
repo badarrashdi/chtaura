@@ -11,6 +11,7 @@ import { useCart } from "@/context/CartContext";
 const navItems = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  { to: "/shop", label: "Shop" },
   { to: "/distribution", label: "Distribution" },
   { to: "/brands", label: "Brands" },
   { to: "/partner", label: "Partner With Us" },
