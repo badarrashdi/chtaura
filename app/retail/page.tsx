@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 
 const slides = [
   { src: "/assets/hero/store111.jpg",      alt: "Chtaura warehouse main aisle" },
-  { src: "/assets/hero/warehouse-beverages.jpg", alt: "Chtaura warehouse — beverages stock" },
-  { src: "/assets/hero/warehouse-forklift.jpg",  alt: "Chtaura warehouse — operations" },
 ];
 function ImageSlider() {
   const [index, setIndex] = useState(0);

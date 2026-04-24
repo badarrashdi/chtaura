@@ -7,7 +7,12 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/assets/hero/chtaura-food-kitchen.jpg",
+    image: "/assets/hero/homebanner1.jpeg",
+    alt: "Chtaura warehouse — wide aisle with fully stocked shelving",
+    caption: "The warehouse",
+  },
+    {
+    image: "/assets/hero/homebanner3.jpeg",
     alt: "Chtaura warehouse — wide aisle with fully stocked shelving",
     caption: "The warehouse",
   },

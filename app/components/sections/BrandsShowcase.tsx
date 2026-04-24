@@ -27,7 +27,7 @@ export const BrandsShowcase = () => (
           href="/brands"
           className="inline-flex items-center gap-2 text-sm font-medium border-b border-foreground pb-1 hover:text-primary hover:border-primary transition-colors self-start md:self-end"
         >
-          Browse all {brands.length} brands <ArrowUpRight className="h-4 w-4" />
+          Browse all brands <ArrowUpRight className="h-4 w-4" />
         </Link>
       </div>
 
