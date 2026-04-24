@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, ShoppingBag, X } from "lucide-react";
 import { Logo } from "./Logo";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/context/CartContext";
 
 const navItems = [
   { to: "/", label: "Home" },
@@ -21,6 +22,7 @@ export const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { totalItems, toggleCart } = useCart();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -76,13 +78,28 @@ export const Navigation = () => {
           </nav>
 
           <div className="flex items-center gap-3">
-            <a
-              href="#"
+            <Link
+              href="/shop"
               className="hidden sm:inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-warm transition-all hover:shadow-elegant hover:translate-y-[-1px]"
             >
               <ShoppingBag className="h-4 w-4" />
-              E-Shop
-            </a>
+              Shop
+            </Link>
+
+            {/* Cart button */}
+            <button
+              onClick={toggleCart}
+              aria-label="Open cart"
+              className="relative inline-flex h-10 w-10 items-center justify-center rounded-full border border-border hover:bg-muted transition-colors"
+            >
+              <ShoppingBag className="h-5 w-5" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center justify-center">
+                  {totalItems > 9 ? "9+" : totalItems}
+                </span>
+              )}
+            </button>
+
             <button
               onClick={() => setOpen((o) => !o)}
               className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-border"
@@ -117,7 +134,7 @@ export const Navigation = () => {
               );
             })}
             <Link
-              href="#"
+              href="/shop"
               className="mt-3 inline-flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"
             >
               <ShoppingBag className="h-4 w-4" /> Visit E-Shop
